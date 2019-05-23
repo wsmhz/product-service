@@ -1,0 +1,41 @@
+package com.wsmhz.shop.product.service.domain.entity;
+
+import com.wsmhz.common.business.domain.Domain;
+import lombok.Data;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ * create by tangbj on 2018/5/18
+ */
+@Data
+@Table(name = "cart")
+public class Cart extends Domain {
+    /**
+     * Id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    /**
+     * 用户Id
+     */
+    private Long userId;
+    /**
+     * 产品Id
+     */
+    private Long productId;
+    /**
+     * 数量
+     */
+    private Integer quantity;
+    /**
+     * 勾选状态
+     */
+    private Boolean checked;
+
+
+}
